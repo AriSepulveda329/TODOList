@@ -1,0 +1,93 @@
+.listItem {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.checkboxContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+}
+
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 45px;
+  width: 45px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  left: 15px;
+  top: 7px;
+  width: 10px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg);
+}
+
+.textSection {
+  flex-grow: 2;
+  margin-left: 55px;
+  line-height: 0.4;
+}
+
+.description {
+  margin: 17px;
+  font-size: 24px;
+}
+
+.date {
+  font-size: 14px;
+  margin: 17px;
+}
+
+.iconSection {
+  align-self: center;
+  padding: 0 20px;
+}
+
+.iconSection button {
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 0;
+  background-color: white;
+  border: none;
+}
+
+.iconSection svg {
+  font-size: 35px;
+}
