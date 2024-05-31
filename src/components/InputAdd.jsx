@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../styles/InputAdd.css";
+import "@/styles/InputAdd.css";
 
 function InputAdd({
   onSubmit,
