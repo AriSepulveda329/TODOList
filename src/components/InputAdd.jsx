@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "@/styles/InputAdd.css";
 
 function InputAdd({
   onSubmit,
@@ -33,16 +32,22 @@ function InputAdd({
   };
 
   return (
-    <div className="addSection">
-      <form onSubmit={handleSubmit}>
+    <div className="w-full">
+      <form onSubmit={handleSubmit} className="flex gap-x-4">
         <input
           placeholder="add task..."
           type="text"
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
           ref={inputRef}
+          className="w-[88%] px-4 py-2.5 box-border border-none rounded-lg text-xl font-medium"
         />
-        <button type="submit">{editTodo.id ? "EDIT" : "ADD"}</button>
+        <button
+          type="submit"
+          className="w-[11%] no-underline border-none rounded-lg bg-cyan-500 text-white font-bold text-xl transition-all cursor-pointer hover:bg-cyan-600"
+        >
+          {editTodo.id ? "EDIT" : "ADD"}
+        </button>
       </form>
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
-import "@/styles/ListItem.css";
 import InputAdd from "./InputAdd";
 
 function ListItem({ todo, todoComplete, removeTodo, updateTodo }) {
