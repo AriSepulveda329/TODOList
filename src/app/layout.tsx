@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { roboto } from "@/ui/fonts";
+import "./global.css";
 
 export const metadata: Metadata = {
   title: "Todo List App",
