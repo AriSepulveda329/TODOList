@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InputAdd from "./InputAdd";
 import ListItem from "./ListItem";
-import "../styles/Todolist.css";
+import "@/styles/Todolist.css";
 
 function Todolist() {
   const [todos, setTodos] = useState([]);
