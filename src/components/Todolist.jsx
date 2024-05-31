@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InputAdd from "./InputAdd";
 import ListItem from "./ListItem";
-import "@/styles/Todolist.css";
 
 function Todolist() {
   const [todos, setTodos] = useState([]);
@@ -54,9 +53,9 @@ function Todolist() {
   };
 
   return (
-    <div className="todoList">
-      <h1>TODO LIST</h1>
-      <div className="listContainer">
+    <div className="flex flex-col justify-center items-center w-screen h-screen">
+      <h1 className="text-3xl mb-3 font-medium">TODO LIST</h1>
+      <div className="flex flex-col gap-y-4 w-1/2 h-2/3 bg-cyan-100 rounded-lg p-6">
         <InputAdd onSubmit={addTodo} />
         {todos.map((todo) => (
           <ListItem

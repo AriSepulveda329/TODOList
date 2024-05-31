@@ -1,11 +1,10 @@
 "use client";
 
-import Todolist from "../components/Todolist";
-import "@/styles/App.css";
+import Todolist from "@/components/Todolist";
 
 function App() {
   return (
-    <div className="app">
+    <div>
       <Todolist />
     </div>
   );

@@ -22,25 +22,33 @@ function ListItem({ todo, todoComplete, removeTodo, updateTodo }) {
   }
 
   return (
-    <div className="listItem">
-      <div className="checkboxContainer">
+    <div className="flex flex-row bg-white rounded-lg">
+      <div className="relative cursor-pointer group">
         <input
           type="checkbox"
           checked={todo.isCompleted}
           onChange={() => todoComplete(todo.id)}
+          className="absolute opacity-0 z-10 top-[10px] left-[10px] cursor-pointer h-[45px] w-[45px] peer"
         />
-        <span className="checkmark"></span>
+        <span className="absolute top-[10px] left-[10px] h-[45px] w-[45px] rounded-md bg-slate-200 group-hover:bg-slate-300 peer-checked:bg-blue-500"></span>
+        <span className="absolute hidden peer-checked:block left-7 top-4 w-[10px] h-[25px] border-t-0 border-r-[3px] border-b-[3px] border-l-0 border-white border-solid rotate-45"></span>
       </div>
-      <div className="textSection">
-        <p className="description">{todo.text}</p>
-        <p className="date">{todo.date}</p>
+      <div className="grow ml-16 my-1.5 leading-[0.4]">
+        <p className="text-2xl">{todo.text}</p>
+        <p className="text-sm">{todo.date}</p>
       </div>
-      <div className="iconSection">
-        <button onClick={() => removeTodo(todo.id)}>
-          <DeleteOutlineIcon />
+      <div className="self-center py-0 px-5">
+        <button
+          className="ml-2 cursor-pointer p-0 bg-white border-none"
+          onClick={() => removeTodo(todo.id)}
+        >
+          <DeleteOutlineIcon sx={{ fontSize: "35px" }} />
         </button>
-        <button onClick={() => setEdit(todo)}>
-          <EditIcon />
+        <button
+          className="ml-2 cursor-pointer p-0 bg-white border-none"
+          onClick={() => setEdit(todo)}
+        >
+          <EditIcon sx={{ fontSize: "35px" }} />
         </button>
       </div>
     </div>
